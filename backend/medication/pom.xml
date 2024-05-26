@@ -20,6 +20,7 @@
     <modules>
         <module>discovery_service</module>
         <module>gateway_service</module>
+        <module>medication_service</module>
     </modules>
 
 
