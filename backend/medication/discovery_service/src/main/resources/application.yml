@@ -1,0 +1,11 @@
+spring:
+  application:
+      name: discovery_services
+
+server:
+    port: 8080
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
