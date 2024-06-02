@@ -1,0 +1,23 @@
+server:
+  port: 8060
+  forward-headers-strategy: framework
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8061/eureka/
+
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: medication-service
+          uri: lb://medication-service
+          predicates:
+            - Path=/medication/**
+          filters:
+            - RewritePath=/medication/(?<path>.*), /$\{path}
