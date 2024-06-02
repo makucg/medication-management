@@ -8,3 +8,12 @@ eureka:
       defaultZone: http://localhost:8061/eureka/
   instance:
     instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+
+springdoc:
+  packagesToScan: gl.devmon.medication.medication_service
+  cache:
+    disabled: true
+  version: '@springdoc.version@'
+  api-docs:
+    version: openapi_3_1
